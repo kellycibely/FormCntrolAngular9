@@ -1,0 +1,47 @@
+<form [formGroup]="formCLiente" (ngSubmit)="onSubmit()">
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" type="text" class="form-control" name="nome" id="nome" formControlName="nome"
+            required>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+        <mat-label>Tipo</mat-label>
+        <select matNativeControl name="tipo" id="tipo" formControlName="tipo" required>
+            <option value="1">Pessoa física</option>
+            <option value="2">Pessoa jurídica</option>
+        </select>
+    </mat-form-field>
+
+    <section class="example-section">
+        <mat-radio-group>
+            <mat-radio-button class="form-check-input" type="radio" name="genero" id="masculino" [value]="1"
+                formControlName="genero">Masculino</mat-radio-button>
+            <mat-radio-button class="form-check-input" type="radio" name="genero" id="feminino" [value]="2"
+                formControlName="genero">Feminimo</mat-radio-button>
+        </mat-radio-group>
+    </section>
+
+
+    <div class="form-group">
+        <label for="dataNascimento">Data de nascimento</label>
+        <input type="date" class="form-control" name="dataNascimento" id="dataNascimento"
+            formControlName="dataNascimento">
+    </div>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Observação</mat-label>
+        <textarea matInput placeholder="Observação" class="form-control" rows="3" name="observacao" id="observacao"
+            formControlName="observacoes"></textarea>
+    </mat-form-field>
+
+    <section class="example-section">
+        <mat-checkbox class="example-margin" formControlName="inativo">Inativo</mat-checkbox>
+    </section>
+
+    <button mat-raised-button color="primary" type="submit" value="Salvar">Salvar</button>
+    <button mat-raised-button>Cancelar</button>
+</form>
